@@ -1,1 +1,3 @@
-use dev or prod branch
+Wrapper cookbook for jira
+
+
