@@ -17,11 +17,11 @@ execute 'run java alernative"'do
   command "alternatives --install /usr/bin/java java /usr/java/jdk#{node['jira-menlo']['java']['jdk_version'] }/jre/bin/java 20000;
            alternatives --install /usr/bin/jar jar /usr/java/jdk#{node['jira-menlo']['java']['jdk_version'] }/bin/jar 20000;
            alternatives --install /usr/bin/javac javac /usr/java/#{node['jira-menlo']['java']['jdk_version'] }/bin/javac 20000;
-           alternatives --install /usr/bin/javaws javaws /usr/java/#{node['jira-menlo']['java']['jdk_version'] }/jre/bin/javaws 20000;
+#           alternatives --install /usr/bin/javaws javaws /usr/java/#{node['jira-menlo']['java']['jdk_version'] }/jre/bin/javaws 20000;
            alternatives --set java /usr/java/#{node['jira-menlo']['java']['jdk_version'] }jre/bin/java;
            alternatives --set jar /usr/java/#{node['jira-menlo']['java']['jdk_version'] }/bin/jar;
            alternatives --set javac /usr/java/#{node['jira-menlo']['java']['jdk_version'] }/bin/javac;
-           alternatives --set javaws /usr/java/#{node['jira-menlo']['java']['jdk_version'] }/jre/bin/javaws"
+#           alternatives --set javaws /usr/java/#{node['jira-menlo']['java']['jdk_version'] }/jre/bin/javaws"
   cwd '/opt'
   action :run
 end
