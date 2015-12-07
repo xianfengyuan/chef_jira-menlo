@@ -10,5 +10,6 @@ package "java-1.7.0-openjdk" do
   action :remove
 end
 
+include_recipe "postgresql"
 include_recipe "jira-menlo::_java"
 include_recipe "jira"
