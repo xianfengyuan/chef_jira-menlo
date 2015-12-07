@@ -6,4 +6,9 @@ package "sysstat" do
   action :install
 end
 
+package "java-1.7.0-openjdk" do
+  action :remove
+end
+
+include_recipe "jira-menlo::_java"
 include_recipe "jira"
