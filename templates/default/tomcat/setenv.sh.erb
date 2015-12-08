@@ -7,6 +7,9 @@
 JAVA_HOME=/usr/java/jdk<%= node['jira-menlo']['java']['jdk_version'] %>
 export JAVA_HOME
 
+JRE_HOME="${JAVA_HOME}/jre"
+export JRE_HOME
+
 #
 # One way to set the JIRA HOME path is here via this variable.  Simply uncomment it and set a valid path like /jira/home.  You can of course set it outside in the command terminal.  That will also work.
 #
