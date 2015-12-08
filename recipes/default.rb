@@ -24,10 +24,4 @@ include_recipe "jira"
   rescue Chef::Exceptions::ResourceNotFound
     Chef::Log.warn "could not find template to override!"
   end
-  begin
-    r = resources(:template => "#{node[:apache][:dir]}/sites-available/jira.conf")
-    r.cookbook "jira-menlo"
-  rescue Chef::Exceptions::ResourceNotFound
-    Chef::Log.warn "could not find template to override!"
-  end
-  
+web_app jira
