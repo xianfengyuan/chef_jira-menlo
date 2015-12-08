@@ -2,6 +2,10 @@ node.override[:jira][:jvm][:minimum_memory] = "1024m"
 node.override[:jira][:jvm][:maximum_memory] = "#{(node.memory.total.to_i * 0.45 ).floor / 1024}m"
 node.override[:jira][:jvm][:maximum_permgen] = "#{(node.memory.total.to_i * 0.15).floor / 1024}m"
 
+node.override[:jira][:apache2][:virtual_host_name] = "${node['jira-menlo']['apache2']['fqdn']"
+node.override[:jira][:apache2][:ssl][:certificate_file] = "/etc/pki/tls/certs/${node['jira-menlo']['apache2']['fqdn'].pem"
+node.override[:jira][:apache2][:ssl][:key_file] = "/etc/pki/tls/private/${node['jira-menlo']['apache2']['fqdn'].key"
+
 package "sysstat" do
   action :install
 end
