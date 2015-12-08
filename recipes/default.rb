@@ -24,4 +24,5 @@ include_recipe "jira"
   rescue Chef::Exceptions::ResourceNotFound
     Chef::Log.warn "could not find template to override!"
   end
-web_app jira
+
+jira_app jira
